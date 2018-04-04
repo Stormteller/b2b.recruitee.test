@@ -1,5 +1,5 @@
 const amqp = require('amqplib')
-// const AMQP_URL = '' // Add your rabbitmq connection string
+const AMQP_URL = 'amqp://localhost' // Add your rabbitmq connection string
 const queueName = 'test'
 
 const x = amqp.connect(AMQP_URL).then(async(conn) => {
