@@ -1,0 +1,1 @@
+class ElasticSearchException extends Error {}

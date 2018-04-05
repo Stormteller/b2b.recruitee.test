@@ -19,11 +19,10 @@ async function createTestTemplate() {
             name: config.ELASTICSEARCH_INDEX_NAME,
             body: esTemplate
         });
-        //log
+        console.log('Template created. ' + result);
     } catch(error) {
-        //log
-        //TODO: Throw custom exception
-        throw err
+        console.log(err);
+        throw new ElasticSearchException();
     }
 }
 
@@ -35,12 +34,11 @@ async function createDocument(json, type) {
             id: cuid(),
             body: json
         });
-        //log
+        console.log('Document created: ' + result._id);
         return result.result + ' ' + result._id;
-    } catch(err) {
-        //log
-        //TODO: Throw custom exception
-        throw err
+    } catch(error) {
+        console.log(err);
+        throw new ElasticSearchException();
     }
 }
 
